@@ -77,9 +77,9 @@ pandas
 To set up your environment, follow these steps:
 Clone the repository:
 ```bash
-git clone https://github.com/afia2023/Afia--CSCI680-Assignment2
+git clone https://github.com/afia2023/CSCI-680-02-Project-.git
 cd Afia--CSCI680-Assignment2
-
+```
 Create a virtual environment (optional but recommended):
 
 python -m venv venv
