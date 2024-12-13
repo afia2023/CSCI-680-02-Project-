@@ -13,7 +13,7 @@ This repository contains the source code and datasets for a Code Summarization a
 For testing purpose there are three test dataset 
 1. CodeT5_test.json
 2. Codebert_test.json
-3. And for the GPT2 model before running the training code we need to run the GP2_dataset.py file it will generate  a Hugging  face dataset format dictionary I have added that dataset link below.  
+3. And for the GPT2 model before running the training code we need to run the GP2_dataset.py file it will generate  a Hugging  face dataset format dictionary I have added that dataset link above.  
 
 ## Table of Contents
 - [Project Title](#project-title)
@@ -33,13 +33,20 @@ To start  execute the following commands in sequence:
 ```bash
 # Extract method codes from source files
 python Method_extractor.py
+```
 
 # Convert CSV data to JSON format
+```bash
 python json_conversion.py
+```
 
 ### To preprocess the data
+```bash
 python Dataset_preprocessing.py
-
+preprocessed_dataset.json dataset will be generated
+```
+### fine-tune
+```bash
 # For fine-tune CodeT5 model
 python CodeT5_train.py
 
@@ -57,16 +64,11 @@ python GP2_Train.py
 
 ```bash
 python CodeT5_test.py
-```
 
 # For eval Codebert model
-
-```bash
 python Codebert_test.py
-```
-# For eval GP2 model
 
-```bash
+# For eval GP2 model
 python GP2_Test1.py
 ```
 
