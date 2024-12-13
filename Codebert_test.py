@@ -11,7 +11,7 @@ model.eval()
 model.to('cuda' if torch.cuda.is_available() else 'cpu')
 
 # Load your test set
-test_data = pd.read_json('/home/afarjana/Code_Summarization/Codebert_version2/test.json')
+test_data = pd.read_json('/home/afarjana/Code_Summarization/Codebert_version2/Codebert_test.json')
 
 # Function to calculate BLEU-4
 def calculate_bleu(reference, candidate):
