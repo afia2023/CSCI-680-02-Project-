@@ -30,7 +30,7 @@ python Method_extractor.py
 # Convert CSV data to JSON format
 python json_conversion.py
 
-# Preprocess the dataset
+### To preprocess the data
 python Dataset_preprocessing.py
 
 # For fine-tune CodeT5 model
