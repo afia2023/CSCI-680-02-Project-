@@ -1,17 +1,13 @@
 # CSCI-680-02-Project-
 
-# Assignment 2 : CodeT5: Training a Transformer model for Predicting if statements
+# Project: Comparative Analysis of Transformer Models for Code Summarization
 
-1. Model Checkpoint-2030-https://drive.google.com/drive/folders/1Clo230JaRyDeZKLdvDHPkjBj_UnrvHqU?usp=sharing
-2. Model Checkpoint-2000 - https://drive.google.com/drive/folders/10wl6dJwrBPS2U5VZfGpDZ4TLf91tBrnw?usp=sharing
-3. Model Checkpoint-50- https://drive.google.com/drive/folders/1g4K3JMzbkAPxef_wOC6eDwyv-xUA4s0X?usp=sharing
-
+1. Fine Tuned Model CodeT5- https://drive.google.com/drive/folders/1FMgb_zInBw4NTAnGiTMOjazh9Mewa2wQ?usp=sharing
+2. Fine-tuned Mdel Codebert - https://drive.google.com/drive/folders/10wl6dJwrBPS2U5VZfGpDZ4TLf91tBrnw?usp=sharing
+3. fine-tuned Model GPT2- https://drive.google.com/drive/folders/1s-j21dh7FZTx00eeTUT1sdP1qv_vqReB?usp=sharing
 ## Introduction
-This project enhances the CodeT5 model's ability to predict if conditions in Python code through specialized pre-training and fine-tuning phases. The dataset derived from CodeXGLUE was fine-tuned over 10 epochs, focusing on identifying and inserting logical conditions accurately. Output evaluations for three checkpoints are available in CSV format, showcasing the model's performance on the entire dataset, though only the first five indices are detailed in the CSV files. This README provides an overview of the methodologies and key findings, guiding users through the project's structured approach and its implications for automated coding tools.
+This repository contains the source code and datasets for a Code Summarization and Analysis Project aimed at improving the understanding and documentation of software code. The project leverages advanced machine learning models such as CodeBERT, CodeT5, and GPT-2 to automatically generate summaries and documentation for given snippets of code. The goal is to assist developers in managing and maintaining large codebases by providing concise, human-readable summaries and accurate documentation generated through state-of-the-art natural language processing techniques.
 
-Pre-training Task: The primary dataset utilized for the pre-training phase is Big_Dataset1.json. This dataset has undergone extensive preprocessing and includes the application of masking logic to prepare it for the training process.
-
-Fine-Tuning Task: For fine-tuning, the dataset used is Finetune_processed_dataset.json.
 ## Table of Contents
 - [Project Title](#project-title)
 
@@ -21,13 +17,12 @@ Fine-Tuning Task: For fine-tuning, the dataset used is Finetune_processed_datase
   - [Dependencies](#dependencies)
   - [Installation](#installation)
 - [Usage](#usage)
-  - [Pre-training](#pre-training)
   - [Fine-tuning](#fine-tuning)
   - [Evaluation](#Evaluation)
-- [Assignment](#Assignment)
+- [Project](#Project)
 
-### Pre-training
-To start the pre-training process, execute the following commands in sequence:
+### To Extract the dataset
+To start  execute the following commands in sequence:
 ```bash
 # Extract method codes from source files
 python Method_extractor.py
@@ -36,36 +31,38 @@ python Method_extractor.py
 python json_conversion.py
 
 # Preprocess the dataset
-python Preprocess_dataset.py
+python Dataset_preprocessing.py
 
-# Maintain indentation with special tokens
-python special_Token_TAB.py
+# For fine-tune CodeT5 model
+python CodeT5_train.py
 
-# Apply the masking logic
-python Masked.py
+# For fine-tuning Codebert model
+python Codebert_train.py
 
-# Train the CodeT5 model
-python T5_2.py
+# For fine-tune GP2 model
+python GP2_Train.py
 
 ```
 
-### Fine-tuning
-```bash
-# Dataset CodeGlux extraction
-python CodeGlux.py 
-
-# Dataset preprocessing
-python Finetune_preprocess.py
-
-# Pretrained Best_model_1 is used for fine tunning 
-
-python Train_CodeT5.py
-```
 
 ### Evaluation
+# For eval CodeT5 model
+
 ```bash
-python eval.py
+python CodeT5_test.py
 ```
+
+# For eval Codebert model
+
+```bash
+python Codebert_test.py
+```
+# For eval GP2 model
+
+```bash
+python GP2_Test1.py
+```
+
 
 ### Dependencies
 This project requires Python 3.8 or later. Dependencies include:
