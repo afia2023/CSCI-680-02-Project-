@@ -1,0 +1,6 @@
+Method Code,Documentation,Generated Text
+def initialize_options(self): self.offline = None,noop initialise option,setting unknown parameters offline
+def finalize_options(self): pass,noop finalise option,no operations finalized successfully
+"def run(self): this_dir = os.getcwd() os.chdir(""Tests"") sys.path.insert(0, """") import run_tests if self.offline: run_tests.main([""--offline""]) else: run_tests.main([]) os.chdir(this_dir)",run the test,test suite failed to execute issues detected
+def can_import(module_name): try: return __import__(module_name) except ImportError: return None,check we can import the requested module,module import check failed load module
+"def get_version(): for line in open(""Bio/__init__.py""): if line.startswith(""__version__ = ""): return ast.literal_eval(line.split(""="")[1].strip()) return ""Undefined""",get version number from init.py,version number extraction script error
