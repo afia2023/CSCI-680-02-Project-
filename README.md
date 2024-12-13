@@ -78,7 +78,7 @@ To set up your environment, follow these steps:
 Clone the repository:
 ```bash
 git clone https://github.com/afia2023/CSCI-680-02-Project-.git
-cd Afia--CSCI680-Assignment2
+cd CSCI-680-02-Project-
 ```
 Create a virtual environment (optional but recommended):
 
