@@ -1,0 +1,6 @@
+Method Code,Documentation,Generated Text
+def initialize_options(self): self.offline = None,initialize options setting offline to None,Initializes offline mode
+def finalize_options(self): pass,finalize options without any operation.,Ends configuration
+"def run(self): this_dir = os.getcwd() os.chdir(""Tests"") sys.path.insert(0, """") import run_tests if self.offline: run_tests.main([""--offline""]) else: run_tests.main([]) os.chdir(this_dir)","executes the test suite, adjusting paths based on offline status.",Test running with errors
+def can_import(module_name): try: return __import__(module_name) except ImportError: return None,"verifies if a specified module can be imported, returns None on failure.",Module import unsuccessful
+"def get_version(): for line in open(""Bio/__init__.py""): if line.startswith(""__version__ = ""): return ast.literal_eval(line.split(""="")[1].strip()) return ""Undefined""",retrieves the version number from the Bio package initialization script.,Version retrieval fails
